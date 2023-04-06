@@ -1,43 +1,21 @@
 package jpabook.jpashop.domain;
 
-import javax.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
-public class BaseEntity {
-    private LocalDateTime regDate;
-    private String regId;
-    private LocalDateTime modDate;
-    private String modId;
+@Getter
+@Setter
+@MappedSuperclass
+public abstract class BaseEntity {
 
-    public LocalDateTime getRegDate() {
-        return regDate;
-    }
+    private String createdBy;
 
-    public void setRegDate(LocalDateTime regDate) {
-        this.regDate = regDate;
-    }
+    private LocalDateTime createdDate;
 
-    public String getRegId() {
-        return regId;
-    }
+    private String lastModifiedBy;
 
-    public void setRegId(String regId) {
-        this.regId = regId;
-    }
-
-    public LocalDateTime getModDate() {
-        return modDate;
-    }
-
-    public void setModDate(LocalDateTime modDate) {
-        this.modDate = modDate;
-    }
-
-    public String getModId() {
-        return modId;
-    }
-
-    public void setModId(String modId) {
-        this.modId = modId;
-    }
+    private LocalDateTime lastModifiedDate;
 }

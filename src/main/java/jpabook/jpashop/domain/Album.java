@@ -1,16 +1,16 @@
 package jpabook.jpashop.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 
 @Entity
-public class Album  extends Item{
+@Getter
+@Setter
+public class Album extends Item {
+
     private String artist;
 
-    public String getArtist() {
-        return artist;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
+    private String etc;
 }
